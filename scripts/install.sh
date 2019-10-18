@@ -7,7 +7,8 @@ sudo chmod +x Dynatrace-OneAgent-Linux-1.177.216.sh
 sudo /bin/sh Dynatrace-OneAgent-Linux-1.177.216.sh APP_LOG_CONTENT_ACCESS=1 INFRA_ONLY=0 
 #Install MySql-Server
 sudo apt-get install mysql-server -y
-
+sudo rm -R /home/ubuntu/tomcat7/webapps/leadapp
+sudo rm /home/ubuntu/tomcat7/webapps/leadapp.war
 
 
 #mysql -h database-1.c15xm7hypcsn.us-east-2.rds.amazonaws.com -P 3306 -u lead -p leadapp123 leadapp</home/ubuntu/schema.sql
