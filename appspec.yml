@@ -1,0 +1,21 @@
+version: 0.0
+os: linux
+files:
+  - source: dist/lib/leadapp.war
+    destination: /home/ubuntu/tomcat7/webapps
+  
+  - source: src/database/schema.sql
+    destination: /home/ubuntu/
+hooks:
+  BeforeInstall:
+    - location: scripts/install.sh
+      timeout: 300
+      runas: root
+  ApplicationStop:
+    - location: scripts/stop.sh
+      timeout: 300
+      runas: root
+  ApplicationStart:
+    - location: scripts/start.sh
+      timeout: 300
+      runas: root

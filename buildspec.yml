@@ -1,0 +1,32 @@
+version: 0.2
+
+env:
+  variables:
+    AWS_DEFAULT_REGION: us-east-2
+    AWS_ACCOUNT_ID: 789530852735
+    IMAGE_REPO_NAME: firstregister
+
+phases:
+  install:
+    runtime-versions:
+      java: openjdk8
+      docker: 18
+    commands:
+      - echo Entered the install phase
+      - apt-get update -y
+  
+  pre_build:
+    commands:
+      - echo logging in to AWS ECR
+      - COMMIT_HASH=$(echo $CODEBUILD_RESOLVED_SOURCE_VERSION | cut -c 1-7)
+      - IMAGE_TAG=build-$(echo $CODEBUILD_BUILD_ID | awk -F":" '{print $2}')
+  
+  build:
+    commands:
+      - echo Entered the build phase
+      - echo Build started on `date`
+      - ant compile jar war
+      - echo Building the Docker image
+artifacts:
+  files:
+    - '**/*'
