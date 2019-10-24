@@ -2,9 +2,7 @@ FROM ubuntu:16.04
 
 MAINTAINER nagarjuna.madineedi@gmail.com
 #WORKDIR /opt/tomcat/webapps
-#RUN curl -O -L https://github.com/AKSarav/SampleWebApp/raw/master/dist/SampleWebApp.wa
 #FROM tomcat:8.0
-# Create app directory
 #COPY dist/lib/leadapp.war /usr/local/tomcat/webapps
 RUN apt-get update -y
 RUN apt-get install wget -y
