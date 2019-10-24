@@ -9,7 +9,7 @@ MAINTAINER nagarjuna.madineedi@gmail.com
 RUN apt-get update -y
 RUN mkdir /opt/tomcat/
 WORKDIR /opt/tomcat
-RUN apt install openjdk-8-jdk -y
+RUN apt-get install openjdk-8-jdk -y
 RUN java -version
 RUN curl -O https://www-us.apache.org/dist/tomcat/tomcat-7/v7.0.96/bin/apache-tomcat-7.0.96.tar.gz
 RUN tar xvfz apache*.tar.gz
