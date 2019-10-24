@@ -8,7 +8,7 @@
                 <property name="show_sql">true</property>
                 <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
                 <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
-                <property name="hibernate.connection.url">jdbc:mysql://leadappdb.c15xm7hypcsn.us-east-2.rds.amazonaws.com:3306/leadapp</property>
+                <property name="hibernate.connection.url">jdbc:mysql://leadappdb.c15xm7hypcsn.us-east-2.rds.amazonaws.com:3306/leadappdatabase</property>
                 <property name="hibernate.connection.username">lead</property>
                 <property name="hibernate.connection.password">leadapp123</property>
 
