@@ -13,7 +13,7 @@ phases:
     commands:
       - echo logging in to AWS ECR
       - $(aws ecr get-login --no-include-email --region $AWS_DEFAULT_REGION) 
-      - REPOSITORY_URI=789530852735.dkr.ecr.us-east-2.amazonaws.com/firstregister
+      - REPOSITORY_URI=805468111780.dkr.ecr.us-east-2.amazonaws.com/firstregister
       - COMMIT_HASH=$(echo $CODEBUILD_RESOLVED_SOURCE_VERSION | cut -c 1-7)
       - IMAGE_TAG=${COMMIT_HASH:=latest}
   
